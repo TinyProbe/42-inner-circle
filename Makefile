@@ -33,6 +33,8 @@ RM			= rm -f
 $(NAME) :	$(OBJ) $(INC)
 	$(ARCH) $(ARCHFLAG) $(NAME) $(OBJ) $(INC)
 
+$(BONUS) :	
+
 srcs/ft_putchar.o :
 	$(CC) $(CFLAG) $(OBJFLAG) srcs/ft_putchar.c -o srcs/ft_putchar.o
 
@@ -51,6 +53,8 @@ srcs/ft_strcmp.o :
 re :		fclean all
 
 all :		$(NAME)
+
+bonus :		all $(BONUS)
 
 clean :
 	$(RM) $(OBJ)
