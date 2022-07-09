@@ -14,7 +14,6 @@ NAME		= libft.a
 CC			= gcc
 CFLAG		= -Wall -Wextra -Werror
 OBJFLAG		= -c
-LINKFLAG	= -g
 ARCH		= ar
 ARCHFLAG	= rcs
 SRC			= ft_atoi.c			\
@@ -51,7 +50,7 @@ SRC			= ft_atoi.c			\
 			  ft_substr.c		\
 			  ft_tolower.c		\
 			  ft_toupper.c
-BONUS_SRC	= ft_lstadd_back.c	\
+SRC_B		= ft_lstadd_back.c	\
               ft_lstadd_front.c	\
               ft_lstclear.c		\
               ft_lstdelone.c	\
@@ -60,76 +59,28 @@ BONUS_SRC	= ft_lstadd_back.c	\
 			  ft_lstmap.c		\
 			  ft_lstnew.c		\
 			  ft_lstsize.c
-OBJ			= ft_atoi.o			\
-			  ft_bzero.o		\
-			  ft_calloc.o		\
-			  ft_isalnum.o		\
-			  ft_isalpha.o		\
-			  ft_isascii.o		\
-			  ft_isdigit.o		\
-			  ft_isprint.o		\
-			  ft_itoa.o			\
-			  ft_memchr.o		\
-			  ft_memcmp.o		\
-			  ft_memcpy.o		\
-			  ft_memmove.o		\
-			  ft_memset.o		\
-			  ft_putchar_fd.o	\
-			  ft_putendl_fd.o	\
-			  ft_putnbr_fd.o	\
-			  ft_putstr_fd.o	\
-			  ft_split.o		\
-			  ft_strchr.o		\
-			  ft_strdup.o		\
-			  ft_striteri.o		\
-			  ft_strjoin.o		\
-			  ft_strlcat.o		\
-			  ft_strlcpy.o		\
-			  ft_strlen.o		\
-			  ft_strmapi.o		\
-			  ft_strncmp.o		\
-			  ft_strnstr.o		\
-			  ft_strrchr.o		\
-			  ft_strtrim.o		\
-			  ft_substr.o		\
-			  ft_tolower.o		\
-			  ft_toupper.o
-BONUS_OBJ	= ft_lstadd_back.o	\
-			  ft_lstadd_front.o	\
-			  ft_lstclear.o		\
-			  ft_lstdelone.o	\
-			  ft_lstiter.o		\
-			  ft_lstlast.o		\
-			  ft_lstmap.o		\
-			  ft_lstnew.o		\
-			  ft_lstsize.o
+OBJ			= $(SRC:.c=.o)
+OBJ_B		= $(SRC_B:.c=.o)
 INC			= libft.h
 RM			= rm -f
+
+.c.o :
+	$(CC) $(CFLAG) $(OBJFLAG) $< -o $(<:.c=.o)
 
 $(NAME) :	$(OBJ) $(INC)
 	$(ARCH) $(ARCHFLAG) $(NAME) $(OBJ) $(INC)
 
-$(BONUS) :	$(OBJ) $(BONUS_OBJ) $(INC)
-	$(ARCH) $(ARCHFLAG) $(NAME) $(OBJ) $(BONUS_OBJ) $(INC)
-
-$(OBJ) :
-	$(CC) $(CFLAG) $(OBJFLAG) 
-
-$(BONUS_OBJ) :
-	$(CC) $(CFLAG) $(OBJFLAG) 
-
-#$(CC) $(CFLAG) $(OBJFLAG) srcs/ft_putchar.c -o srcs/ft_putchar.o
-
-re :		fclean all
+bonus :		$(OBJ_B) $(INC)
+	$(ARCH) $(ARCHFLAG) $(NAME) $(OBJ_B) $(INC)
 
 all :		$(NAME)
 
-reb :		fclean bonus
-
-bonus :		$(BONUS)
-
 clean :
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) $(OBJ_B)
 
 fclean :	clean
 	$(RM) $(NAME)
+
+re :		fclean all
+
+.PHONY :	all bonus clean fclean re
