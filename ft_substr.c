@@ -12,14 +12,19 @@
 
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+static char	*strncpy(char *dst, const char *src, size_t size);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*dst;
+	return (strncpy((char *)malloc(len + 1), s + start, len + 1));
+}
 
-	dst = (char *)malloc(len + 1);
-	if (dst)
-		ft_strlcpy(dst, s + start, len + 1);
+static char	*strncpy(char *dst, const char *src, size_t size)
+{
+	if (!dst)
+		return (dst);
+	dst[--size] = '\0';
+	while (size--)
+		dst[size] = src[size];
 	return (dst);
 }

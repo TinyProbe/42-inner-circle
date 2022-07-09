@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 void		*ft_calloc(size_t count, size_t size);
 int			ft_isdigit(int c);
 static int	abs(int n);
-static void	reverse(char *arr, int begin, int end);
+static void	reverse(char *str, int begin, int end);
 static void	swap(char *a, char *b);
 static char	*strdigit(const char *s);
 
@@ -42,11 +44,11 @@ static int	abs(int n)
 	return (n);
 }
 
-static void	reverse(char *arr, int begin, int end)
+static void	reverse(char *str, int begin, int end)
 {
 	--begin;
 	while (++begin < --end)
-		swap(arr + begin, arr + end);
+		swap(str + begin, str + end);
 }
 
 static void	swap(char *a, char *b)
@@ -64,5 +66,5 @@ static char	*strdigit(const char *s)
 	while (*(++s))
 		if (ft_isdigit(*s))
 			break ;
-	return (s);
+	return ((char *)s);
 }

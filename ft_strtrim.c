@@ -43,9 +43,9 @@ static char	*trimmed_str(const char *s, const unsigned char *code)
 	size = trimmed_size(&s, code);
 	dst = (char *)malloc(size);
 	if (dst)
-		while (size--)
+		while (size)
 			if (!code[(int)(*(--s))])
-				dst[size] = *s;
+				dst[--size] = *s;
 	return (dst);
 }
 

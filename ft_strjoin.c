@@ -24,10 +24,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	dst = (char *)malloc(len_s1 + len_s2 + 1);
-	if (dst)
-	{
-		ft_strlcpy(dst, s1, len_s1 + 1);
-		ft_strlcpy(dst + len_s1, s2, len_s2 + 1);
-	}
+	if (!dst)
+		return (dst);
+	ft_strlcpy(dst, s1, len_s1 + 1);
+	ft_strlcpy(dst + len_s1, s2, len_s2 + 1);
 	return (dst);
 }

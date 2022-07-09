@@ -12,9 +12,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && *s != c)
+	while (*s && *s != (char)c)
 		++s;
-	if (*s == c)
-		return (s);
+	if (*s == (char)c)
+		return ((char *)s);
 	return ((char *)0);
 }

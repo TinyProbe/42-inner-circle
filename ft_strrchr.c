@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 size_t	ft_strlen(const char *s);
 
 char	*ft_strrchr(const char *s, int c)
@@ -19,6 +21,6 @@ char	*ft_strrchr(const char *s, int c)
 	size = ft_strlen(s) + 1;
 	while (size--)
 		if (s[size] == c)
-			return (s + size);
+			return ((char *)s + size);
 	return ((char *)0);
 }
