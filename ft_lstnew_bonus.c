@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 12:25:11 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 11:38:08 by tkong            ###   ########.fr       */
+/*   Created: 2022/07/13 14:38:41 by tkong             #+#    #+#             */
+/*   Updated: 2022/07/13 14:38:43 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft_bonus.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *s);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	tmp;
+	t_list	*elem;
 
-	tmp = ft_strlen(s1) + 1;
-	if (n > tmp)
-		n = tmp;
-	tmp = ft_strlen(s2) + 1;
-	if (n > tmp)
-		n = tmp;
-	return (ft_memcmp(s1, s2, n));
+	elem = (t_list *)malloc(sizeof(t_list));
+	if (!elem)
+		return (elem);
+	elem->content = content;
+	elem->next = (t_list *)0;
+	return (elem);
 }

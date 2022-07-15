@@ -6,38 +6,45 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:39:07 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 19:23:00 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/14 19:47:22 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-void		*ft_calloc(size_t count, size_t size);
-int			ft_isdigit(int c);
-static int	abs(int n);
+size_t		ft_strlen(const char *s);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
+static int	abs2(int n);
 static void	reverse(char *str, int begin, int end);
 static void	swap(char *a, char *b);
-static char	*strdigit(const char *s);
 
 char	*ft_itoa(int n)
 {
-	char	*s;
+	char	buf[12];
+	char	*dst;
 	int		i;
+	size_t	len;
 
-	s = (char *)ft_calloc(15, sizeof(char));
 	i = 0;
 	if (n < 0)
-		s[i++] = '-';
+		buf[i++] = '-';
 	while (n)
 	{
-		s[i++] = abs(n % 10) + '0';
+		buf[i++] = abs2(n % 10) + '0';
 		n /= 10;
 	}
-	reverse(s, strdigit(s) - s, i);
-	return (s);
+	buf[i] = '\0';
+	reverse(buf, buf[0] == '-', i);
+	len = ft_strlen(buf);
+	if (!len)
+		return ((char *) ft_memcpy(malloc(2), "0\0", 2));
+	dst = (char *) malloc(len + 1);
+	if (!dst)
+		return (dst);
+	return ((char *) ft_memcpy(dst, buf, len + 1));
 }
 
-static int	abs(int n)
+static int	abs2(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -58,13 +65,4 @@ static void	swap(char *a, char *b)
 	*a ^= *b;
 	*b ^= *a;
 	*a ^= *b;
-}
-
-static char	*strdigit(const char *s)
-{
-	--s;
-	while (*(++s))
-		if (ft_isdigit(*s))
-			break ;
-	return ((char *)s);
 }

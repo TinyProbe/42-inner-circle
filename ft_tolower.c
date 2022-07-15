@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define BYTE	unsigned char
+
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + ('a' - 'A'));
-	return (c);
+	if (c == -1 || c >= 256)
+		return (c);
+	if ((BYTE) c >= 'A' && (BYTE) c <= 'Z')
+		return ((BYTE) c + ('a' - 'A'));
+	return ((BYTE) c);
 }

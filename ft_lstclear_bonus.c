@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 12:25:11 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 11:38:08 by tkong            ###   ########.fr       */
+/*   Created: 2022/07/13 14:38:19 by tkong             #+#    #+#             */
+/*   Updated: 2022/07/13 14:38:23 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft_bonus.h"
 
-size_t	ft_strlen(const char *s);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	tmp;
+	t_list	*cur;
 
-	tmp = ft_strlen(s1) + 1;
-	if (n > tmp)
-		n = tmp;
-	tmp = ft_strlen(s2) + 1;
-	if (n > tmp)
-		n = tmp;
-	return (ft_memcmp(s1, s2, n));
+	while (*lst)
+	{
+		cur = *lst;
+		*lst = (*lst)->next;
+		ft_lstdelone(cur, del);
+	}
 }

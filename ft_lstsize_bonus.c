@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 12:25:11 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 11:38:08 by tkong            ###   ########.fr       */
+/*   Created: 2022/07/13 14:38:45 by tkong             #+#    #+#             */
+/*   Updated: 2022/07/13 14:39:00 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft_bonus.h"
 
-size_t	ft_strlen(const char *s);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	tmp;
+	int	len;
 
-	tmp = ft_strlen(s1) + 1;
-	if (n > tmp)
-		n = tmp;
-	tmp = ft_strlen(s2) + 1;
-	if (n > tmp)
-		n = tmp;
-	return (ft_memcmp(s1, s2, n));
+	len = 0;
+	while (lst)
+	{
+		++len;
+		lst = lst->next;
+	}
+	return (len);
 }

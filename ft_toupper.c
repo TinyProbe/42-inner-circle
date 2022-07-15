@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define BYTE	unsigned char
+
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - ('a' - 'A'));
-	return (c);
+	if (c == -1 || c >= 256)
+		return (c);
+	if ((BYTE) c >= 'a' && (BYTE) c <= 'z')
+		return ((BYTE) c - ('a' - 'A'));
+	return ((BYTE) c);
 }

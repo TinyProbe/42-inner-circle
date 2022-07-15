@@ -12,33 +12,33 @@
 
 #include <stddef.h>
 
-void		ft_bzero(void *s, size_t n);
 void		ft_putstr_fd(char *s, int fd);
-int			ft_isdigit(int c);
-static int	abs(int n);
+static int	abs2(int n);
 static void	reverse(char *str, int begin, int end);
 static void	swap(char *a, char *b);
-static char	*strdigit(const char *s);
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	s[15];
+	char	buf[12];
 	int		i;
 
-	ft_bzero((void *)s, sizeof(s));
 	i = 0;
 	if (n < 0)
-		s[i++] = '-';
+		buf[i++] = '-';
 	while (n)
 	{
-		s[i++] = abs(n % 10) + '0';
+		buf[i++] = abs2(n % 10) + '0';
 		n /= 10;
 	}
-	reverse(s, strdigit(s) - s, i);
-	ft_putstr_fd(s, fd);
+	buf[i] = '\0';
+	reverse(buf, buf[0] == '-', i);
+	if (!i)
+		ft_putstr_fd("0", fd);
+	else
+		ft_putstr_fd(buf, fd);
 }
 
-static int	abs(int n)
+static int	abs2(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -59,13 +59,4 @@ static void	swap(char *a, char *b)
 	*a ^= *b;
 	*b ^= *a;
 	*a ^= *b;
-}
-
-static char	*strdigit(const char *s)
-{
-	--s;
-	while (*(++s))
-		if (ft_isdigit(*s))
-			break ;
-	return ((char *)s);
 }

@@ -6,27 +6,49 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:35:03 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/07 20:47:47 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/13 15:23:51 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char *s);
+#define BYTE	unsigned char
+#define UNT_T	unsigned long long
+#define UNTSIZE	8
+
+size_t		ft_strlen(const char *s);
+static void	cat8(long long *pp1, long long *pp2, size_t *pn);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	int		i;
+	long long	p[2];
+	size_t		len[2];
+	size_t		n;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	if (len_dst >= size)
-		return (len_src + size);
-	i = -1;
-	while ((size_t)++i + len_dst + 1 < size && (size_t)i < len_src)
-		dst[len_dst + i] = src[i];
-	dst[len_dst + i] = '\0';
-	return (len_dst + len_src);
+	len[0] = ft_strlen(dst);
+	len[1] = ft_strlen(src);
+	p[0] = (long long) dst + len[0];
+	p[1] = (long long) src;
+	if (len[0] >= size)
+		return (len[1] + size);
+	n = size - (len[0] + 1);
+	if (n > len[1])
+		n = len[1];
+	if (n >= UNTSIZE)
+		cat8(p, p + 1, &n);
+	while (n--)
+		*(BYTE *) p[0]++ = *(BYTE *) p[1]++;
+	*(BYTE *) p[0] = '\0';
+	return (len[0] + len[1]);
+}
+
+static void	cat8(long long *pp1, long long *pp2, size_t *pn)
+{
+	while (*pn >= UNTSIZE)
+	{
+		*(UNT_T *) *pp1 = *(UNT_T *) *pp2;
+		*pp1 += UNTSIZE;
+		*pp2 += UNTSIZE;
+		*pn -= UNTSIZE;
+	}
 }

@@ -12,21 +12,17 @@
 
 #include <stdlib.h>
 
-size_t		ft_strlen(const char *s);
-static char	*strncpy(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 char	*ft_strdup(const char *s1)
 {
 	size_t	size;
+	void	*res;
 
 	size = ft_strlen(s1) + 1;
-	return (strncpy((char *)malloc(size), s1, size));
-}
-
-static char	*strncpy(char *dst, const char *src, size_t size)
-{
-	if (dst)
-		while (size--)
-			dst[size] = src[size];
-	return (dst);
+	res = malloc(size);
+	if (res)
+		return ((char *) ft_memcpy(res, s1, size));
+	return (res);
 }

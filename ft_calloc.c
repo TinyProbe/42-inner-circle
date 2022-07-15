@@ -18,6 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
+	if (count > 16711568 || size > 16711568 || count * size > 16711568)
+		return ((void *) 0);
 	ptr = malloc(count * size);
 	if (ptr)
 		ft_bzero(ptr, count * size);

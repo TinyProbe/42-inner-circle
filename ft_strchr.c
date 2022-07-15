@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n);
+size_t	ft_strlen(const char *s);
+
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && *s != (char)c)
-		++s;
-	if (*s == (char)c)
-		return ((char *)s);
-	return ((char *)0);
+	return ((char *) ft_memchr(s, c, ft_strlen(s) + 1));
 }
