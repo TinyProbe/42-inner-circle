@@ -17,7 +17,7 @@
 #define UNTSIZE	8
 
 size_t		ft_strlen(const char *s);
-static void	cat8(long long *pp1, long long *pp2, size_t *pn);
+static void	cat64(long long *pp1, long long *pp2, size_t *pn);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -35,15 +35,29 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (n > len[1])
 		n = len[1];
 	if (n >= UNTSIZE)
-		cat8(p, p + 1, &n);
+		cat64(p, p + 1, &n);
 	while (n--)
 		*(BYTE *) p[0]++ = *(BYTE *) p[1]++;
 	*(BYTE *) p[0] = '\0';
 	return (len[0] + len[1]);
 }
 
-static void	cat8(long long *pp1, long long *pp2, size_t *pn)
+static void	cat64(long long *pp1, long long *pp2, size_t *pn)
 {
+	while (*pn >= UNTSIZE * 8)
+	{
+		((UNT_T *) *pp1)[0] = ((UNT_T *) *pp2)[0];
+		((UNT_T *) *pp1)[1] = ((UNT_T *) *pp2)[1];
+		((UNT_T *) *pp1)[2] = ((UNT_T *) *pp2)[2];
+		((UNT_T *) *pp1)[3] = ((UNT_T *) *pp2)[3];
+		((UNT_T *) *pp1)[4] = ((UNT_T *) *pp2)[4];
+		((UNT_T *) *pp1)[5] = ((UNT_T *) *pp2)[5];
+		((UNT_T *) *pp1)[6] = ((UNT_T *) *pp2)[6];
+		((UNT_T *) *pp1)[7] = ((UNT_T *) *pp2)[7];
+		*pp1 += UNTSIZE * 8;
+		*pp2 += UNTSIZE * 8;
+		*pn -= UNTSIZE * 8;
+	}
 	while (*pn >= UNTSIZE)
 	{
 		*(UNT_T *) *pp1 = *(UNT_T *) *pp2;

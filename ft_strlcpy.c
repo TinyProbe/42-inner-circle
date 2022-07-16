@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	n;
 
 	len = ft_strlen(src);
-	if (!dst || !size)
+	if (!size)
 		return (len);
 	n = len;
 	if (n > size - 1)

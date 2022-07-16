@@ -24,14 +24,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (length[0] > len)
 		length[0] = len;
 	i[0] = -1;
-	while ((size_t)++(i[0]) + length[1] <= length[0])
+	while ((size_t) ++i[0] + length[1] <= length[0])
 	{
 		i[1] = -1;
-		while ((size_t)++(i[1]) < length[1])
+		while ((size_t) ++i[1] < length[1])
 			if (big[i[0] + i[1]] != little[i[1]])
 				break ;
-		if ((size_t)(i[1]) == length[1])
-			return ((char *)big + i[0]);
+		if ((size_t) i[1] == length[1])
+			return ((char *) big + i[0]);
 	}
-	return ((char *)0);
+	return ((char *) 0);
 }

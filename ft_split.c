@@ -78,7 +78,7 @@ static size_t	split(const char *trimmed, char **buf, char c)
 		p1 = p2 + 1;
 		p2 = (long long) ft_memchr((char *) p1, c, ft_strlen((char *) p1));
 	}
-	if (ft_strlen((char *) p1))
+	if (*(char *) p1)
 		buf[num++] = ft_strdup((char *) p1);
 	buf[num] = (char *) 0;
 	return (num);

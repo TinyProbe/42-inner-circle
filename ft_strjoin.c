@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	dst = (char *)malloc(len_s1 + len_s2 + 1);
+	dst = (char *) malloc(len_s1 + len_s2 + 1);
 	if (!dst)
 		return (dst);
 	ft_memcpy(dst, s1, len_s1 + 1);

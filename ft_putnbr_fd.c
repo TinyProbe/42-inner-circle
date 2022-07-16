@@ -32,10 +32,10 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	buf[i] = '\0';
 	reverse(buf, buf[0] == '-', i);
-	if (!i)
-		ft_putstr_fd("0", fd);
-	else
+	if (i)
 		ft_putstr_fd(buf, fd);
+	else
+		ft_putstr_fd("0", fd);
 }
 
 static int	abs2(int n)

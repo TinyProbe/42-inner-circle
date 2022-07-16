@@ -14,36 +14,29 @@
 
 #define BYTE	unsigned char
 
-static size_t	find_null(long long p);
-
 size_t	ft_strlen(const char *s)
 {
 	long long	p;
 
 	p = (long long) s;
-	return (find_null(p) - (size_t) s);
-}
-
-static size_t	find_null(long long p)
-{
 	while (1)
 	{
 		if (!((BYTE *) p)[0])
-			return (p);
+			return (p - (long long) s);
 		else if (!((BYTE *) p)[1])
-			return (p + 1);
+			return (p + 1 - (long long) s);
 		else if (!((BYTE *) p)[2])
-			return (p + 2);
+			return (p + 2 - (long long) s);
 		else if (!((BYTE *) p)[3])
-			return (p + 3);
+			return (p + 3 - (long long) s);
 		else if (!((BYTE *) p)[4])
-			return (p + 4);
+			return (p + 4 - (long long) s);
 		else if (!((BYTE *) p)[5])
-			return (p + 5);
+			return (p + 5 - (long long) s);
 		else if (!((BYTE *) p)[6])
-			return (p + 6);
+			return (p + 6 - (long long) s);
 		else if (!((BYTE *) p)[7])
-			return (p + 7);
+			return (p + 7 - (long long) s);
 		p += 8;
 	}
 }

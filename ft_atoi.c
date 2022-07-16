@@ -12,8 +12,8 @@
 
 #include <stddef.h>
 
-#define DIGIT 1
-#define WSPACE 2
+#define DIGIT   1
+#define WSPACE  2
 
 int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
