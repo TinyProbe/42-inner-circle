@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:39:07 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/14 19:47:22 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/17 21:36:17 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_itoa(int n)
 	int		i;
 	size_t	len;
 
+	if (!n)
+		return ((char *) ft_memcpy(malloc(2), "0\0", 2));
 	i = 0;
 	if (n < 0)
 		buf[i++] = '-';
@@ -36,8 +38,6 @@ char	*ft_itoa(int n)
 	buf[i] = '\0';
 	reverse(buf, buf[0] == '-', i);
 	len = ft_strlen(buf);
-	if (!len)
-		return ((char *) ft_memcpy(malloc(2), "0\0", 2));
 	dst = (char *) malloc(len + 1);
 	if (!dst)
 		return (dst);
