@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 12:38:34 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/07 12:45:31 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/17 17:05:25 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (length[0] > len)
 		length[0] = len;
 	i[0] = -1;
-	while ((size_t) ++i[0] + length[1] <= length[0])
+	while ((size_t)++i[0] + length[1] <= length[0])
 	{
 		i[1] = -1;
-		while ((size_t) ++i[1] < length[1])
+		while ((size_t)++i[1] < length[1])
 			if (big[i[0] + i[1]] != little[i[1]])
 				break ;
 		if ((size_t) i[1] == length[1])

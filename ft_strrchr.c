@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 18:07:29 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 15:44:08 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/17 17:05:38 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 	if (n >= UNTSIZE)
 		check8(&p, &n, c);
 	while (n--)
-		if (*(BYTE *) --p == (BYTE) c)
+		if (*(BYTE *)--p == (BYTE) c)
 			return ((void *) p);
 	return ((void *) 0);
 }

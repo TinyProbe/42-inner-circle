@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 12:32:41 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 14:43:42 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/17 17:05:12 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		check(&p, &n, c);
 	while (n--)
 		if (*(BYTE *) p++ == (BYTE) c)
-			return ((void *) (p - 1));
+			return ((void *)(p - 1));
 	return ((void *) 0);
 }
 
