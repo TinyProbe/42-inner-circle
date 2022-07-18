@@ -6,14 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 16:18:11 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 10:30:42 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:53:05 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

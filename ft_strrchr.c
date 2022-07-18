@@ -6,17 +6,16 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 18:07:29 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:03:13 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:54:33 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 #define BYTE	unsigned char
 #define UNT_T	unsigned long long
 #define UNTSIZE	8
 
-size_t		ft_strlen(const char *s);
 static void	check8(long long *pp, size_t *pn, int c);
 
 char	*ft_strrchr(const char *s, int c)

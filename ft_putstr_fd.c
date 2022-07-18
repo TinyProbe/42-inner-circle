@@ -6,13 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 19:57:17 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 19:59:20 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:52:33 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

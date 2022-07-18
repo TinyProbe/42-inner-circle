@@ -6,11 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:28:21 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 15:42:10 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:53:54 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 #define BYTE	unsigned char
 

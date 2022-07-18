@@ -6,15 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 12:34:03 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/14 17:33:27 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:54:52 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	*ft_calloc(size_t count, size_t size);
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

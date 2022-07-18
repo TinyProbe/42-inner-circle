@@ -6,11 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:57:10 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:42:33 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:55:07 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define BYTE	unsigned char
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

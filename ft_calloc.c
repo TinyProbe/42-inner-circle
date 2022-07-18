@@ -6,13 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:46:15 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 12:58:39 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:49:36 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n);
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

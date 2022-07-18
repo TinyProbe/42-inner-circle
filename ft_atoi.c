@@ -6,17 +6,15 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 12:32:28 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 22:22:34 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:49:01 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 #define DIGIT   1
 #define WSPACE  2
 
-int				ft_isdigit(int c);
-int				ft_strncmp(const char *s1, const char *s2, size_t n);
 static size_t	digitlen(const char *s);
 static int		iswhat(int c);
 static int		stoi(const char *str, size_t n);

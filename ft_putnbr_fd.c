@@ -6,13 +6,12 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:04:25 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/08 20:22:02 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:52:25 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void		ft_putstr_fd(char *s, int fd);
 static int	abs2(int n);
 static void	reverse(char *str, int begin, int end);
 static void	swap(char *a, char *b);

@@ -6,11 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:04:29 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 15:04:38 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:51:40 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 #define BYTE	unsigned char
 #define UNT_T	unsigned long long

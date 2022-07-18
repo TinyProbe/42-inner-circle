@@ -6,18 +6,12 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 15:49:32 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/18 14:10:11 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:52:45 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t			ft_strlen(const char *s);
-char			*ft_strtrim(char const *s1, char const *set);
-void			*ft_memchr(const void *s, int c, size_t n);
-char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_strdup(const char *s1);
-void			*ft_memcpy(void *dst, const void *src, size_t n);
 static char		*trim(const char *s, char c);
 static size_t	split(const char *trimmed, char **buf, char c);
 

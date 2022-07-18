@@ -6,18 +6,15 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 13:48:58 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/14 20:59:44 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:54:43 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 #define BYTE		unsigned char
 #define CODE_SIZE	256
 
-void			ft_bzero(void *s, size_t n);
-size_t			ft_strlen(const char *s);
-char			*ft_substr(char const *s, unsigned int start, size_t len);
 static void		make_code(BYTE *code, const char *set);
 static char		*trimmed_str(const char *s, BYTE *code);
 

@@ -6,14 +6,15 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 12:06:34 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/18 17:33:47 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 18:03:32 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

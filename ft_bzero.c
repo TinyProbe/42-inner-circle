@@ -6,13 +6,11 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:00:43 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/17 21:48:24 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:49:27 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memset(void *dstpp, int c, size_t len);
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

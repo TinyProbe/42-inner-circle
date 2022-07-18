@@ -6,17 +6,16 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 19:23:35 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/14 20:59:24 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:54:04 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 #define BYTE	unsigned char
 #define UNT_T	unsigned long long
 #define UNTSIZE	8
 
-size_t		ft_strlen(const char *s);
 static void	shakecopy(long long p1, long long p2, size_t n,
 				char (*f)(unsigned int, char));
 

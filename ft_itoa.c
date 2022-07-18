@@ -6,14 +6,12 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:39:07 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/17 21:48:46 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:50:48 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t		ft_strlen(const char *s);
-void		*ft_memcpy(void *dst, const void *src, size_t n);
 static int	abs2(int n);
 static void	reverse(char *str, int begin, int end);
 static void	swap(char *a, char *b);

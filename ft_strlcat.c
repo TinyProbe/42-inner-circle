@@ -6,17 +6,16 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:35:03 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 15:23:51 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 17:53:37 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 #define BYTE	unsigned char
 #define UNT_T	unsigned long long
 #define UNTSIZE	8
 
-size_t		ft_strlen(const char *s);
 static void	cat64(long long *pp1, long long *pp2, size_t *pn);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
