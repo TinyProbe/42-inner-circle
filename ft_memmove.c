@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:27:18 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/13 15:12:08 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/18 13:07:02 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	rightshift8(long long p1, long long p2, size_t n)
 
 void	rightshift4(long long p1, long long p2, size_t n)
 {
-	while (n >= UNTSIZE * 8)
+	while (n >= UNT2SIZE * 8)
 	{
 		p1 -= UNT2SIZE * 8;
 		p2 -= UNT2SIZE * 8;
@@ -87,7 +87,7 @@ void	rightshift4(long long p1, long long p2, size_t n)
 		((UNT2_T *) p1)[6] = ((UNT2_T *) p2)[6];
 		((UNT2_T *) p1)[7] = ((UNT2_T *) p2)[7];
 	}
-	while (n >= UNTSIZE)
+	while (n >= UNT2SIZE)
 	{
 		p1 -= UNT2SIZE;
 		p2 -= UNT2SIZE;
@@ -109,7 +109,7 @@ void	rightshiftn(long long p1, long long p2, size_t n, size_t dif)
 			n -= 1;
 			*(BYTE *)--p1 = *(BYTE *)--p2;
 		}
-		if (n >= 2 && dif & 2)
+		if (n >= UNT3SIZE && dif & 2)
 		{
 			n -= 2;
 			p1 -= 2;
