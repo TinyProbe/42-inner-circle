@@ -6,7 +6,7 @@
 #    By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 12:24:20 by tkong             #+#    #+#              #
-#    Updated: 2022/07/17 21:22:09 by tkong            ###   ########.fr        #
+#    Updated: 2022/07/18 16:18:39 by tkong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,16 +64,22 @@ OBJ_B		= $(SRC_B:.c=.o)
 INC			= libft.h
 RM			= rm -f
 
+ifdef WITH
+	SEL = $(OBJ_B)
+else
+	SEL = $(OBJ)
+endif
+
 %.o :		%.c
 	$(CC) $(CFLAG) $(OBJFLAG) $?
 
-$(NAME) :	$(OBJ)
+$(NAME) :	$(SEL)
 	$(ARCH) $(ARCHFLAG) $(NAME) $?
 
 all :		$(NAME)
 
-bonus :		$(OBJ_B)
-	$(ARCH) $(ARCHFLAG) $(NAME) $?
+bonus :
+	make WITH=1 all
 
 clean :
 	$(RM) $(OBJ) $(OBJ_B)

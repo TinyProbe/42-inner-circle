@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:51:55 by tkong             #+#    #+#             */
-/*   Updated: 2022/07/06 17:58:10 by tkong            ###   ########.fr       */
+/*   Updated: 2022/07/17 17:42:15 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_toupper(int c)
 {
 	if (c == -1 || c >= 256)
 		return (c);
-	if ((BYTE) c >= 'a' && (BYTE) c <= 'z')
-		return ((BYTE) c - ('a' - 'A'));
-	return ((BYTE) c);
+	if (c >= 'a' && c <= 'z')
+		return (c - ('a' - 'A'));
+	return (c);
 }
